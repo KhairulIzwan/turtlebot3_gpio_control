@@ -31,7 +31,7 @@ class blink_led_node:
         """ init RPi GPIO """
         GPIO.setmode(GPIO.BOARD)
         GPIO.setwarnings(False)
-        GPIO.setup(8, GPIO.OUT)
+        GPIO.setup(12, GPIO.OUT)
 
         """  Initializing your ROS Node """
         rospy.init_node('blink_led_node', anonymous=True)
@@ -44,10 +44,11 @@ class blink_led_node:
     def callback(self,data):
         if (data.data == True):
             rospy.loginfo("LED ON!")
-            GPIO.output(8, GPIO.HIGH)
+            GPIO.output(12, GPIO.HIGH)
+
         elif (data.data == False):
             rospy.logerr("LED OFF!")
-            GPIO.output(8, GPIO.LOW)
+            GPIO.output(12, GPIO.LOW)
 
     def shutdown(self):
         try:
