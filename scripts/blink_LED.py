@@ -42,10 +42,10 @@ class blink_led_node:
         self.imgRaw_sub = rospy.Subscriber("/led_blink", Bool, self.callback)
 
     def callback(self,data):
-        if (data.msg == 1):
+        if (data.msg == True):
             rospy.loginfo("LED ON!")
             GPIO.output(8, GPIO.HIGH)
-        elif (data.msg == 0):
+        elif (data.msg == False):
             rospy.logerr("LED OFF!")
             GPIO.output(8, GPIO.LOW)
 
