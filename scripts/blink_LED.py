@@ -66,7 +66,6 @@ def usage():
 
 def main(args):
     vn = blink_led_node()
-
     try:
         rospy.spin()
     except KeyboardInterrupt:
