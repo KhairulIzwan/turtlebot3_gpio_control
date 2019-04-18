@@ -65,8 +65,7 @@ def main(args):
         rospy.spin()
     except KeyboardInterrupt:
         print("Blink LED node [OFFLINE]...")
-
-    cv2.destroyAllWindows()
+        
 
 if __name__ == '__main__':
     if len(sys.argv) < 1:
