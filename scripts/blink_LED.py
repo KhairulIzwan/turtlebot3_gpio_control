@@ -25,11 +25,6 @@ import numpy as np
 import RPi.GPIO as GPIO
 import time
 
-print "LED on"
-GPIO.output(8,GPIO.HIGH)
-time.sleep(1)
-print "LED off"
-GPIO.output(8,GPIO.LOW)
 
 class blink_led_node:
     def __init__(self):
@@ -59,7 +54,7 @@ class blink_led_node:
             rospy.loginfo("Blink LED node [OFFLINE]...")
 
         finally:
-            pass
+            GPIO.cleanup()
 
 def usage():
     print("%s" % sys.argv[0],)
