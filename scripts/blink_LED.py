@@ -47,7 +47,7 @@ class blink_led_node:
             GPIO.output(12, GPIO.HIGH)
 
         elif (data.data == False):
-            rospy.logerr("LED OFF!")
+            rospy.logwarn("LED OFF!")
             GPIO.output(12, GPIO.LOW)
 
     def shutdown(self):
